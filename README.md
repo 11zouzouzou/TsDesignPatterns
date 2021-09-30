@@ -1,6 +1,9 @@
 # TsDesignPatterns
 
-TS 实现设计模式
+TS 实现设计模式,每个模式都编写 TS 示例
+
+# run examples
+yarn install and yarn dev
 
 ## 设计模式-可复用面向对象软件的基础
 
@@ -10,11 +13,11 @@ TS 实现设计模式
 
 ### [创建型](./src/creational/README.md)
 
+- 静态工厂方法(原型)
 - 工厂方法
 - 抽象工厂
 - 单例
 - 建造者
-- 原型
 
 ### 结构型
 
@@ -39,3 +42,7 @@ TS 实现设计模式
 - 访问者
 - 备忘录
 - 解释器
+
+# 参考
+
+<https://design-patterns.readthedocs.io/zh_CN/latest/index.html>
