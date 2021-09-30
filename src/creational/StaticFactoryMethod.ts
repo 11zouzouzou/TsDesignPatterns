@@ -33,6 +33,9 @@ class ConcreteProductB implements Product {
  * 静态工厂方法
  */
 class Factory {
+  /**
+   * @param proname 创建产品name
+   */
   static createProduct(proname: string) {
     if ("A" == proname) {
       return new ConcreteProductA();
@@ -43,8 +46,48 @@ class Factory {
   }
 }
 
-export function init() {
+/**
+ * 举个3D图形抽象的例子
+ */
+
+/**
+ * 两种场景类型：服饰场景与建筑场景
+ */
+enum EScene {
+  cloth = "cloth",
+  building = "building",
+}
+
+/**
+ * 抽象3D场景父类
+ */
+abstract class Scene {
+  abstract sceneType: EScene;
+}
+
+class ClothScene implements Scene {
+  sceneType = EScene.cloth;
+}
+
+class BuildingScene implements Scene {
+  sceneType = EScene.building;
+}
+
+function CreateScene(sceneType: EScene) {
+  switch (sceneType) {
+    case EScene.building:
+      return new BuildingScene();
+    case EScene.cloth:
+      return new ClothScene();
+    default:
+      return;
+  }
+}
+
+export function test() {
   console.warn("static factory method");
   console.log(Factory.createProduct("A"));
   console.log(Factory.createProduct("B"));
+  console.log(CreateScene(EScene.cloth));
+  console.log(CreateScene(EScene.building));
 }
