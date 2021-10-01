@@ -109,4 +109,5 @@ export function test() {
   console.log(CreateScene(EScene.building));
   console.log('prototype:',Prototype.getName());
   console.log('prototype copy:',PrototypeCopy.getName());
+  console.log('---');
 }
