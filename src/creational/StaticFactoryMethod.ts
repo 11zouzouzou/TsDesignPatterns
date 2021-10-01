@@ -53,6 +53,7 @@ const Prototype = {
   name: "zouzouzou",
   getName: function () {
     console.log("name is :" + this.name);
+    return this.name;
   },
 };
 
