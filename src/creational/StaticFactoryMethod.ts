@@ -47,6 +47,22 @@ class Factory {
 }
 
 /**
+ * 原型实现
+*/
+const Prototype = {
+  name: "zouzouzou",
+  getName: function () {
+    console.log("name is :" + this.name);
+  },
+};
+
+const PrototypeCopy = Object.create(Prototype, {
+  name: {
+    value: "zou1",
+  },
+});
+
+/**
  * 举个3D图形抽象的例子
  */
 
@@ -90,4 +106,6 @@ export function test() {
   console.log(Factory.createProduct("B"));
   console.log(CreateScene(EScene.cloth));
   console.log(CreateScene(EScene.building));
+  console.log('prototype:',Prototype.getName());
+  console.log('prototype copy:',PrototypeCopy.getName());
 }
