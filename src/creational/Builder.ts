@@ -36,11 +36,61 @@ class Director {
   }
 }
 
+/**
+ * 举个例子：创建一个3D地图
+ */
+
+class WorldMap {
+  objects: string[] = [];
+  setObject(object: string) {
+    this.objects.push(object);
+  }
+  getObjects() {
+    return this.objects;
+  }
+}
+
+interface MapBulder {
+  worlderMap: WorldMap;
+  buildMap(object: string): void;
+  getResult(): string[];
+}
+
+class ConcreteMapBuilder implements MapBulder {
+  worlderMap: WorldMap = new WorldMap();
+  buildMap(object: string) {
+    this.worlderMap.setObject(object);
+  }
+  getResult() {
+    return this.worlderMap.getObjects();
+  }
+}
+
+class MapBuilderDirector {
+  builder: MapBulder;
+  constructor(builder: MapBulder) {
+    this.builder = builder;
+  }
+  changeMapBulder(builder: MapBulder) {
+    this.builder = builder;
+  }
+  construct() {
+    this.builder.buildMap("sky");
+    this.builder.buildMap("plane");
+    this.builder.buildMap("background");
+  }
+}
+
 export function test() {
   console.warn("Builder");
   let concreteBuilder = new ConcreteBuilder();
   let director = new Director(concreteBuilder);
   director.construct();
   console.log("product:", concreteBuilder.parts);
+  console.log("example:");
+  let concreteMapBuilder = new ConcreteMapBuilder();
+  let mapDirector = new MapBuilderDirector(concreteMapBuilder);
+  mapDirector.construct();
+  console.log("worldMap:", concreteMapBuilder.getResult());
   console.log("---");
 }
