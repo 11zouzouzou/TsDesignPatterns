@@ -3,6 +3,7 @@
 TS 实现设计模式,每个模式都编写 TS 示例
 
 # run examples
+
 yarn install and yarn dev
 
 ## 设计模式-可复用面向对象软件的基础
@@ -16,10 +17,10 @@ yarn install and yarn dev
 - 静态工厂方法(原型)
 - 工厂方法
 - 抽象工厂
-- 单例
 - 建造者
+- 单例
 
-### 结构型
+### [结构型](./src/structural/README.md)
 
 - 适配器
 - 装饰器
@@ -43,6 +44,7 @@ yarn install and yarn dev
 - 备忘录
 - 解释器
 
-# 参考
+# 主要参考
 
 <https://design-patterns.readthedocs.io/zh_CN/latest/index.html>
+<http://www.yechiu.com/s/resume/085636de_e57c_42ca_f024_209d71a22b6f.pdf>
