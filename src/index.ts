@@ -7,3 +7,5 @@ import * as AbstractFactory from "./creational/AbstractFactory";
 AbstractFactory.test();
 import * as Builder from "./creational/Builder";
 Builder.test();
+import * as Singleton from "./creational/Singleton";
+Singleton.test();
