@@ -38,11 +38,18 @@ class ConcreteFactoryCreator implements FactoryCreator {
 /**
  * 举个实际例子：任何系统都有可能用到的日志记录器
  */
+
+/**
+ * 抽象日志系统
+*/
 abstract class LogSystem<T> {
   abstract logs: T[];
   abstract writeLog(log: T): void;
 }
 
+/**
+ * 进度日志系统
+*/
 class ProgressLogSystem implements LogSystem<number> {
   logs: number[] = [];
   writeLog(log: number) {
@@ -51,6 +58,9 @@ class ProgressLogSystem implements LogSystem<number> {
   }
 }
 
+/**
+ * 文件日志系统
+*/
 class FileLogSystem implements LogSystem<string> {
   logs: string[] = [];
   writeLog(log: string) {
@@ -59,16 +69,25 @@ class FileLogSystem implements LogSystem<string> {
   }
 }
 
+/**
+ * 抽象日志系统创建
+*/
 abstract class LogSystemFactory {
   abstract createLogSystem(): LogSystem<unknown>;
 }
 
+/**
+ * 文件日志系统创建
+*/
 class FileLogSystemFactory implements LogSystemFactory {
   createLogSystem() {
     return new FileLogSystem();
   }
 }
 
+/**
+ * 进度日志系统创建
+*/
 class ProgressLogSystemFactory implements LogSystemFactory {
   createLogSystem() {
     return new ProgressLogSystem();
