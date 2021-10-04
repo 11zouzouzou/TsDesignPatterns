@@ -26,6 +26,11 @@ class SystemB {
   }
 }
 
+/**
+ * 举个例子：
+ * 在装饰器模式的例子中的绘制图形，将各个图形当成子系统，再新建一类为对外的统一绘制图形接口，该类即为外观类
+ */
+
 export function test() {
   console.warn("Facade:");
   console.log(new Facade(new SystemA(), new SystemB()).operation());
