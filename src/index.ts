@@ -25,3 +25,5 @@ import * as Facade from "./structural/Facade";
 Facade.test();
 import * as Flyweight from "./structural/Flyweight";
 Flyweight.test();
+import * as Proxy from './structural/Proxy';
+Proxy.test();
