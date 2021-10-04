@@ -19,3 +19,5 @@ import * as Adapter from "./structural/Adapter";
 Adapter.test();
 import * as Bridge from "./structural/Bridge";
 Bridge.test();
+import * as Decorator from "./structural/Decorator";
+Decorator.test();

@@ -23,10 +23,10 @@ yarn install and yarn dev
 ### [结构型](./src/structural/README.md)
 
 - 适配器
+- 桥接
 - 装饰器
 - 代理
 - 外观
-- 桥接
 - 组合
 - 享元
 
