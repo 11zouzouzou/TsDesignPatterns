@@ -27,3 +27,5 @@ import * as Flyweight from "./structural/Flyweight";
 Flyweight.test();
 import * as Proxy from './structural/Proxy';
 Proxy.test();
+import * as Composite from './structural/Composite';
+Composite.test();
