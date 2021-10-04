@@ -17,3 +17,5 @@ Singleton.test();
  */
 import * as Adapter from "./structural/Adapter";
 Adapter.test();
+import * as Bridge from "./structural/Bridge";
+Bridge.test();
