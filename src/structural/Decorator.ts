@@ -39,10 +39,45 @@ class ConcreteDecoretor extends Decorator {
   }
 }
 
+/**
+ * 举个例子：绘制几何图形
+ */
+interface Shape {
+  draw(): string;
+}
+
+class RectAngle implements Shape {
+  draw() {
+    return "rectAngle";
+  }
+}
+class Circle implements Shape {
+  draw() {
+    return "Circle";
+  }
+}
+
+class ShapeDecorator implements Shape {
+  constructor(protected shape: Shape) {}
+  draw() {
+    return this.shape.draw();
+  }
+}
+
+class RedShapeDecorator extends ShapeDecorator {
+  setRedBorder() {
+    return "redBorder";
+  }
+}
+
 export function test() {
   console.warn("Decorator:");
   let concreteComp = new ConcreteComponentA();
   let concreteDecoretor = new ConcreteDecoretor(concreteComp);
   console.log(concreteDecoretor.operation(), concreteDecoretor.addBehavior());
+  console.log("example:");
+  let shape = new RectAngle();
+  let redShapeDecorator = new RedShapeDecorator(shape);
+  console.log(redShapeDecorator.draw(), redShapeDecorator.setRedBorder());
   console.log("---");
 }
