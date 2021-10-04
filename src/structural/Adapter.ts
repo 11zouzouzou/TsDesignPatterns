@@ -34,16 +34,50 @@ class Adapter implements Target {
  * 在客户类中针对目标抽象类进行编程，调用在目标抽象类中定义的业务方法
  */
 class Client {
-  click() {
-    let adaptee = new Adaptee();
-    let adapter = new Adapter(adaptee);
+  click(adapter: Adapter) {
     return adapter.request();
+  }
+}
+/**
+ * 举个简单的例子：网线适配
+ */
+interface NetToUsb {
+  //作用：处理请求，网线=>usb
+  handleRequest(): string;
+}
+
+class NetAdaptee {
+  request() {
+    return "连网线,已可上网";
+  }
+}
+
+class NetAdapter implements NetToUsb {
+  private instance: NetAdaptee;
+  constructor(instance: NetAdaptee) {
+    this.instance = instance;
+  }
+  handleRequest() {
+    return this.instance.request();
+  }
+}
+
+class Computer {
+  net(netAdapter: NetAdapter) {
+    return netAdapter.handleRequest();
   }
 }
 
 export function test() {
   console.warn("adapter pattern");
   let client = new Client();
-  console.log(client.click());
+  let adaptee = new Adaptee();
+  let adapter = new Adapter(adaptee);
+  console.log(client.click(adapter));
+  console.log("example:");
+  let netAdaptee = new NetAdaptee();
+  let netAdapter = new NetAdapter(netAdaptee);
+  let computer = new Computer();
+  console.log("computer:", computer.net(netAdapter));
   console.log("---");
 }
