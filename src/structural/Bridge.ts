@@ -43,6 +43,50 @@ class RefinedAbstraction extends Abstraction {
   }
 }
 
+/**
+ * 举个例子：人根据不同的场合穿着不同的衣服
+ */
+/**
+ * 实现类接口
+ */
+abstract class Finery {
+  abstract dress(): string;
+}
+/**
+ * jacket是对finery的具体实现
+ */
+class Jacket extends Finery {
+  dress() {
+    return "jacket";
+  }
+}
+
+class TShirt extends Finery {
+  dress() {
+    return "TShirt";
+  }
+}
+
+/**
+ * human是抽象类
+ */
+class Human {
+  finery: Finery;
+  constructor(finery: Finery) {
+    this.finery = finery;
+  }
+  changeDress(finery: Finery) {
+    this.finery = finery;
+    return this.finery.dress();
+  }
+}
+
+class Shoes extends Finery {
+  dress() {
+    return "Shoes";
+  }
+}
+
 export function test() {
   console.log("Bridge:");
   let concreteImplementor = new ConcreteImplementor();
@@ -50,5 +94,9 @@ export function test() {
   let refinedAbstraction = new RefinedAbstraction(concreteImplementor);
   console.log(abstraction.operation());
   console.log(refinedAbstraction.operation());
+  console.log("example:");
+  console.log("human:", new Human(new Jacket()).finery.dress());
+  console.log("human:", new Human(new TShirt()).finery.dress());
+  console.log("human:", new Human(new Shoes()).finery.dress());
   console.log("---");
 }
