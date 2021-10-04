@@ -21,3 +21,5 @@ import * as Bridge from "./structural/Bridge";
 Bridge.test();
 import * as Decorator from "./structural/Decorator";
 Decorator.test();
+import * as Facade from "./structural/Facade";
+Facade.test();
