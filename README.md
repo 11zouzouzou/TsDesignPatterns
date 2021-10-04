@@ -30,7 +30,7 @@ yarn install and yarn dev
 - 代理
 - 组合
 
-### 行为型
+### 行为型(./src/bahavioral/README.md)
 
 - 策略
 - 模板
