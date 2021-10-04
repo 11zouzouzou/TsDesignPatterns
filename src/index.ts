@@ -1,4 +1,7 @@
 console.log("run typescript");
+/**
+ * creational
+ */
 import * as StaticFactoryMethod from "./creational/StaticFactoryMethod";
 StaticFactoryMethod.test();
 import * as FactoryMethod from "./creational/FactoryMethod";
@@ -9,3 +12,8 @@ import * as Builder from "./creational/Builder";
 Builder.test();
 import * as Singleton from "./creational/Singleton";
 Singleton.test();
+/**
+ * structural
+ */
+import * as Adapter from "./structural/Adapter";
+Adapter.test();
