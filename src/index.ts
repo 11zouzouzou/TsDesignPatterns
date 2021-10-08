@@ -25,7 +25,12 @@ import * as Facade from "./structural/Facade";
 Facade.test();
 import * as Flyweight from "./structural/Flyweight";
 Flyweight.test();
-import * as Proxy from './structural/Proxy';
+import * as Proxy from "./structural/Proxy";
 Proxy.test();
-import * as Composite from './structural/Composite';
+import * as Composite from "./structural/Composite";
 Composite.test();
+/**
+ * behavioral
+ */
+import * as ChainOfResponsibility from "./behavioral/ChainOfResponsibility";
+ChainOfResponsibility.test();
