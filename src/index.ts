@@ -34,3 +34,5 @@ Composite.test();
  */
 import * as ChainOfResponsibility from "./behavioral/ChainOfResponsibility";
 ChainOfResponsibility.test();
+import * as Command from "./behavioral/Command";
+Command.test();
