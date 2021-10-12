@@ -38,5 +38,7 @@ import * as Command from "./behavioral/Command";
 Command.test();
 import * as Interpreter from "./behavioral/Interpreter";
 Interpreter.test();
-import * as Iterator from './behavioral/Iterator';
+import * as Iterator from "./behavioral/Iterator";
 Iterator.test();
+import * as Mediator from "./behavioral/Mediator";
+Mediator.test();
