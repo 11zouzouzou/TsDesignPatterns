@@ -1,6 +1,6 @@
 # TsDesignPatterns
 
-TS 实现设计模式,每个模式都编写 TS 示例
+- TS 实现设计模式,每个模式都编写 TS 示例
 
 # run examples
 
